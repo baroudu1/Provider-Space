@@ -10,7 +10,7 @@ function ProviderOffres() {
     let [offres, setOffres] = useState([]);
     let [count, setCount] = useState();
 
-
+    
 
     useEffect(()=>{
         getAllOffres().then((res)=>{

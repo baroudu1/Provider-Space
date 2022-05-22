@@ -94,7 +94,7 @@ export const Offer = (props) => {
                         <p>{date}</p>
                     </Card.Text>
                     <Button variant="primary" onClick={handleShow}>
-                        Launch demo modal
+                        make offer
                     </Button>
                 </Card.Body>
             </Card>
