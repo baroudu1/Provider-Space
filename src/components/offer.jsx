@@ -23,6 +23,16 @@ export const Offer = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => {
+        if (localStorage.getItem("status") == "eliminated"){
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'You have been eliminated',
+                showConfirmButton: false,
+                timer: 1500,
+            })
+            return;
+        }
         setShow(true)
     };
 

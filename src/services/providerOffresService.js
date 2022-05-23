@@ -17,6 +17,12 @@ export const registerProvider = async (name,username,password,email,roles) => {
 
   return test
 }
+
+export const getStatus = async (email) => {
+  let { data: Owners } = await axios.get(API_URL + '/providers/myStatus/' + email)
+  return Owners
+}
+
 export const registerProvider1 = async (provider) => {
 
   console.log(provider)

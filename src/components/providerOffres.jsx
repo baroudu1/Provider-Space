@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, FormControl, Nav, Navbar, Container, NavDropdown, Form, Card } from 'react-bootstrap';
 
-import { getAllOffres } from "../services/providerOffresService"
+import { getAllOffres, getStatus } from "../services/providerOffresService"
 import { Offer } from "./offer";
 
 function ProviderOffres() {
     
     let [offres, setOffres] = useState([]);
     let [count, setCount] = useState();
+    let [status, setStatus] = useState("valid");
 
     
 
@@ -17,7 +18,16 @@ function ProviderOffres() {
             setOffres(res)
             setCount(res.length)
             console.log(offres)
+            
+        });
+        console.log("hey")
+        let user = JSON.parse(localStorage.getItem("user")).email
+        getStatus(user).then((resp) => {
+            if (resp == "eliminated") {
+                localStorage.setItem("status", "eliminated")
+            }
         })
+        
     },[10])
     return (
         <React.Fragment>
@@ -26,7 +36,7 @@ function ProviderOffres() {
                 <hr />
                 {
                     offres.map((offre) => (
-                        <Offer key={offre.id} value={offre} />
+                        <Offer key={offre.id} value={offre}  />
                     ))
                 }
             </Container>
