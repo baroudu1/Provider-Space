@@ -22,7 +22,7 @@ export const registerProvider1 = async (provider) => {
   console.log(provider)
   
 
-  let { data: test1 } = await axios.post(API_URL + '/providers',provider)
+  let { data: test1 } = await axios.post(API_URL + '/providers', provider)
 
   return test1
 }

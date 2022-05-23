@@ -6,10 +6,12 @@ import 'font-awesome/css/font-awesome.css';
 import ProviderOffres from './components/providerOffres';
 import NavBar from './components/navBar';
 import { Button, FormControl, Nav, Navbar, Container, NavDropdown, Form } from 'react-bootstrap';
+import Header from './components/Header';
 ReactDOM.render(
   <React.StrictMode>
     <Container fluid>
       <NavBar />
+      <Header/>
       <ProviderOffres />
     </Container>
   </React.StrictMode>,

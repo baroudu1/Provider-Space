@@ -21,8 +21,8 @@ function ProviderOffres() {
     },[10])
     return (
         <React.Fragment>
-            <Container fluid className="mt-5 row">
-                <h2 className="col-12">Count of offres : {count} </h2>
+            <Container fluid className="mt-5 row" style={{ background: '#f1f1f1', width:"100vw", paddingTop: "30px", paddingBottom: "30px" }}>
+                <h2 className="col-12" style={{ color: 'rgb(41 93 131)', marginBottom: "-8px", textAlign: "center" }}>Number of tenders : {count} </h2>
                 <hr />
                 {
                     offres.map((offre) => (
