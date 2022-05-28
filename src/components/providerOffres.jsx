@@ -21,7 +21,11 @@ function ProviderOffres() {
             
         });
         console.log("hey")
-        let user = JSON.parse(localStorage.getItem("user")).email
+        let user = ""
+        try{
+            user = JSON.parse(localStorage.getItem("user")).email
+        }catch(e){}
+        
         getStatus(user).then((resp) => {
             if (resp == "eliminated") {
                 localStorage.setItem("status", "eliminated")
